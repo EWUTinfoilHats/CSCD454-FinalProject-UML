@@ -208,7 +208,7 @@
             isAbstract="false">
             <interfaceMoniker
               Id="7b766a15-039c-47b5-8fb0-ec73dab43ed3"
-              LastKnownName="Spell"
+              LastKnownName="ISpell"
               LastKnownLocation="CSCD454-FinalProject-UML.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -944,6 +944,14 @@
               LastKnownName="Entity"
               LastKnownLocation="CSCD454-FinalProject-UML.uml" />
           </generalization>
+          <generalization
+            Id="4f6f0ecb-be48-4b33-a4e7-3d2f5ae305bf"
+            isSubstitutable="false">
+            <interfaceMoniker
+              Id="d615faa9-5e16-4e5b-bf8d-8717ef8759eb"
+              LastKnownName="MonsterPrototype"
+              LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+          </generalization>
         </generalsInternal>
       </Interface>
     </packageHasNamedElement>
@@ -1280,9 +1288,85 @@
     <packageHasNamedElement>
       <Interface
         Id="7b766a15-039c-47b5-8fb0-ec73dab43ed3"
-        name="Spell"
+        name="ISpell"
         isAbstract="false"
         isLeaf="false">
+        <targetEnds>
+          <association
+            Id="63285399-a7d6-4975-ac2e-78bb531dacaa"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <interfaceMoniker
+              Id="28286d65-a7e3-41d1-96d8-5ef1ad1f9c58"
+              LastKnownName="SpellType"
+              LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a9cd0341-557c-4421-a769-f2e0ce16d674"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="cb0de532-c919-4879-9f14-b3253c583530"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="0535e498-d552-425a-adda-eec76e05881a"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="ff160737-6970-437b-8913-cb7014e9fa7b"
+              LastKnownName="CombatGroup"
+              LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e9967e5b-66bd-41c6-b912-b34a7ed2dcbf"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8d64d3cb-87fb-4807-a04a-06c5658cf84a"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributes>
           <property
             Id="133860d3-f5a6-4fef-8500-a10aea6d2db5"
@@ -1356,10 +1440,28 @@
                 LastKnownLocation="CSCD454-FinalProject-UML.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="daee07f1-f73d-48ae-9b45-a858475474a9"
+            name="Description"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="8b8efc3e-3db2-4004-aa64-1b6173443a41"
+                LastKnownName="string"
+                LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributes>
         <ownedOperations>
           <operation
-            Id="fefd323d-7f3d-40b0-a0ee-b196c11c7bff"
+            Id="52e8811b-531e-452e-af6a-b489f24b3532"
             name="CastAt"
             isLeaf="false"
             isStatic="false"
@@ -1369,39 +1471,28 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="de066488-75ef-45a0-93f7-0632f0255823"
-                  name="target"
-                  direction="In"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="438a90be-2501-44f0-9748-73abf191ee22"
-                      LastKnownName="ModelingProject1::Entity"
-                      LastKnownLocation="CSCD454-FinalProject-UML.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
-            Id="48c84baf-a574-4d6b-87d4-1a5df394a1c2"
-            name="CastAt"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="true"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="08bd6041-5796-4e82-96a6-068c05670709"
+                  Id="3d441bda-9aab-4baa-b199-006bf72408eb"
                   name="targets"
                   direction="In"
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="ee30a1c3-8f88-46ce-b5b8-027de93a9544"
-                      LastKnownName="IList&lt;Entity&gt;"
+                      Id="200b9d06-91dc-4da0-8502-a2e4aaf15d25"
+                      LastKnownName="CombatGroup"
+                      LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3df4fe3f-f848-4326-a566-0e4ae4225214"
+                  name="caster"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="72d102e8-3c95-4590-adcb-e5ececdb6773"
+                      LastKnownName="Entity"
                       LastKnownLocation="CSCD454-FinalProject-UML.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -4236,6 +4327,43 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="55154b3f-d32d-4d4d-9dcc-2de3e5c884e8"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="ff160737-6970-437b-8913-cb7014e9fa7b"
+              LastKnownName="CombatGroup"
+              LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f0002bf0-8483-4629-9382-c56c2ab36036"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="93e8765a-186d-4ee1-baa9-7885fca90333"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
         <ownedOperationsInternal>
           <operation
@@ -4287,6 +4415,1024 @@
             isQuery="false" />
         </ownedOperationsInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="9d225827-494e-44d4-abb1-070f6d231fa2"
+        name="CastSpellCommand"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="200b9d06-91dc-4da0-8502-a2e4aaf15d25"
+        name="CombatGroup" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="28286d65-a7e3-41d1-96d8-5ef1ad1f9c58"
+        name="SpellType"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="ba5bce26-5d03-4b65-8c24-c21f817e8411"
+            name="DidFizzle"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ce65e790-9dd5-40e0-b00a-7d39a28ea19f"
+                  name="caster"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="72d102e8-3c95-4590-adcb-e5ececdb6773"
+                      LastKnownName="Entity"
+                      LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4d03eb91-f8c6-4388-80de-180e0a92b033"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="4a28cd34-b653-4006-a406-5a40e08a16b3"
+                      LastKnownName="bool"
+                      LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="d615faa9-5e16-4e5b-bf8d-8717ef8759eb"
+        name="MonsterPrototype"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="810a73cf-f919-4e11-bf13-67679591495f"
+            name="Clone : Monster"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="a0d38cb9-90f4-4a62-89c7-1df4955c6491"
+        name="AbstractSpell"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="047e7716-2c68-4405-8234-f239d2b112cb">
+            <interfaceMoniker
+              Id="7b766a15-039c-47b5-8fb0-ec73dab43ed3"
+              LastKnownName="ISpell"
+              LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="b8ed97a0-6909-4e0c-8a94-c81be0ecc00d"
+            name="CastAt"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="84281bab-c06b-4f82-b322-c530bf1e8d65"
+                  name="targets"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="200b9d06-91dc-4da0-8502-a2e4aaf15d25"
+                      LastKnownName="CombatGroup"
+                      LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="444e045b-b323-4cfa-a937-f89c0f5d89e2"
+                  name="caster"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="72d102e8-3c95-4590-adcb-e5ececdb6773"
+                      LastKnownName="Entity"
+                      LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="324d7482-2546-4e4b-9a11-c5e7be73ca85"
+            name="GetLevel"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="aac00ced-b3cd-40fc-afae-86195b368d5b"
+                  name="caster"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="72d102e8-3c95-4590-adcb-e5ececdb6773"
+                      LastKnownName="Entity"
+                      LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9c4503a7-7967-4b64-b8ea-783aca9eebbe"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="efe4d519-ade6-4776-8a08-2c0a84439579"
+                      LastKnownName="int"
+                      LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f0457874-3891-4e20-8cdb-2b155cfcd05c"
+        name="OffensiveSTSpell"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="9b4cf563-a2da-429d-8292-9fb073c08bf0"
+            isSubstitutable="false">
+            <classMoniker
+              Id="a0d38cb9-90f4-4a62-89c7-1df4955c6491"
+              LastKnownName="AbstractSpell"
+              LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="bf445db8-d484-4b83-8b58-204b66b5e1a9"
+        name="OffensiveAOESpell"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="40a31ad0-7b21-43e2-81e2-f279eb6103bd"
+            isSubstitutable="false">
+            <classMoniker
+              Id="f0457874-3891-4e20-8cdb-2b155cfcd05c"
+              LastKnownName="OffensiveSTSpell"
+              LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="9b9f8c1c-ba6a-4a0b-9747-80178c1a91e6"
+        name="HealingSTSpell"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="a50d7b78-52dd-4059-9342-4f37230354a7"
+            isSubstitutable="false">
+            <classMoniker
+              Id="a0d38cb9-90f4-4a62-89c7-1df4955c6491"
+              LastKnownName="AbstractSpell"
+              LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="152a4ea5-d213-4610-bfce-f9eb74e37c34"
+        name="HealingAOESpell"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="d36165e5-b93a-45ff-b38a-3da64bed9952"
+            isSubstitutable="false">
+            <classMoniker
+              Id="9b9f8c1c-ba6a-4a0b-9747-80178c1a91e6"
+              LastKnownName="HealingSTSpell"
+              LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ff160737-6970-437b-8913-cb7014e9fa7b"
+        name="CombatGroup"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="98e70836-4b44-4239-88de-91f6afdfeae8"
+            name="Players"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="ee30a1c3-8f88-46ce-b5b8-027de93a9544"
+                LastKnownName="IList&lt;Entity&gt;"
+                LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="1039dfea-ca8c-452c-a8c1-2fcefcd06b75"
+            name="Monsters"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="ee30a1c3-8f88-46ce-b5b8-027de93a9544"
+                LastKnownName="IList&lt;Entity&gt;"
+                LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="4b2c772e-d7a0-497a-8cab-cde52465079d"
+            name="Target"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="72d102e8-3c95-4590-adcb-e5ececdb6773"
+                LastKnownName="Entity"
+                LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="d1790018-306c-409d-a4fb-ed20ea553b47"
+            name="SetTarget"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="bcbc4001-5174-4dbd-bc30-7e95379a70bf"
+                  name="target"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="72d102e8-3c95-4590-adcb-e5ececdb6773"
+                      LastKnownName="Entity"
+                      LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="13420751-7ef2-4b7b-b1ca-ae2e94f0553b"
+        name="CureWounds"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="db8a8f03-adb9-4e5f-8e15-e9242fb3d7d3"
+            isSubstitutable="false">
+            <classMoniker
+              Id="9b9f8c1c-ba6a-4a0b-9747-80178c1a91e6"
+              LastKnownName="HealingSTSpell"
+              LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b120daf9-27be-4302-96e7-03ccd702dd82"
+        name="InflictWounds"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="aca67179-7358-4f0a-a929-cfb60890840a"
+        name="Fireball"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="fa3d784e-8140-40ff-bc89-04ae4fefe500"
+            isSubstitutable="false">
+            <classMoniker
+              Id="bf445db8-d484-4b83-8b58-204b66b5e1a9"
+              LastKnownName="OffensiveAOESpell"
+              LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="82ee1212-cd8d-4b0d-9184-a2fa92d54fc6"
+        name="AcidSplash"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="13f6d98c-5969-4f19-a805-75c629a0e34e"
+            isSubstitutable="false">
+            <classMoniker
+              Id="f0457874-3891-4e20-8cdb-2b155cfcd05c"
+              LastKnownName="OffensiveSTSpell"
+              LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="30ee27d3-0221-46aa-899c-4b8056279ef6"
+        name="ArcaneSpell"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="a43751f9-caad-4a3c-8ec2-eaa26c469504">
+            <interfaceMoniker
+              Id="28286d65-a7e3-41d1-96d8-5ef1ad1f9c58"
+              LastKnownName="SpellType"
+              LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="05f48a53-c675-446b-8d25-37416c2c7a93"
+            name="DidFizzle"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c79a5a01-5dd5-4ffa-ae45-4eb9295fd9b3"
+                  name="caster"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="72d102e8-3c95-4590-adcb-e5ececdb6773"
+                      LastKnownName="Entity"
+                      LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4e9af5b0-d079-41d5-ad2d-b63722a87b74"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="4a28cd34-b653-4006-a406-5a40e08a16b3"
+                      LastKnownName="bool"
+                      LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4f3b9dd5-e201-4ec7-85e3-6f1051a450dd"
+        name="DivineSpell"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="602020d6-47db-4180-84f4-3ae0c4d53669"
+        name="BurningHands"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="57569578-66ee-4c53-bbac-ff334abed82f"
+        name="MagicMissle"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="9d08338b-216b-4eed-a582-89f28c23eddf"
+        name="RayOfFrost"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b2113426-2a7b-44ca-a244-5de8923ff159"
+        name="ScorchingRay"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="d6897f73-5a23-467f-9963-bd34715888fd"
+        name="Class1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="dba4ec0f-992d-4be2-bfe7-2341a1203017"
+        name="AbstractCharacterFactory"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="d6ac57eb-5f05-496f-91bb-9f864a231e7a"
+            name="CreateCharacter"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9618839d-3fc1-4806-9cb8-53f704ab41cf"
+                  name="class"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="8b8efc3e-3db2-4004-aa64-1b6173443a41"
+                      LastKnownName="string"
+                      LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="10613d1e-162c-4693-b9c5-a18876a47552"
+                  name="ui"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="5fe74b94-b5b0-4b25-8b64-1535b9a73cff"
+                      LastKnownName="UserInteraction"
+                      LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="67710840-a7b7-44c4-9279-b98656f677bd"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="dcd9ba86-221d-4ca2-99c0-8d1fa46874de"
+                      LastKnownName="Player)"
+                      LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="dcd9ba86-221d-4ca2-99c0-8d1fa46874de"
+        name="Player)" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="fa832314-cfd4-4ea7-b6ba-61624c72f14d"
+        name="DefaultCharacterFactory"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="a857d584-775d-43e4-aae5-2a6d5cab03a1">
+            <interfaceMoniker
+              Id="dba4ec0f-992d-4be2-bfe7-2341a1203017"
+              LastKnownName="AbstractCharacterFactory"
+              LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="16615081-fed2-47b7-805b-a219642cfe30"
+            name="CreateCharacter"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="887920bb-435e-4825-9dec-eca0e82ddebe"
+                  name="class"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="8b8efc3e-3db2-4004-aa64-1b6173443a41"
+                      LastKnownName="string"
+                      LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f75f35a6-9563-4e67-8939-f1422d148634"
+                  name="ui"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="5fe74b94-b5b0-4b25-8b64-1535b9a73cff"
+                      LastKnownName="UserInteraction"
+                      LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="043c3575-53c9-4244-9f7c-d89e505b4a01"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="dcd9ba86-221d-4ca2-99c0-8d1fa46874de"
+                      LastKnownName="Player)"
+                      LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="38f503e9-c3bf-4012-ac94-5bbc7ce4194d"
+        name="D100"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="2291fabe-e97d-4e41-8cdd-0ceec6c28af0"
+        name="EncounterGen"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="b108f3ce-34de-4a5d-9fd9-c44205ebecd6"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="4b38c763-a2ad-4552-9011-f46baed34619"
+              LastKnownName="MonsterFactory"
+              LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="20a35b51-aa4a-4cc6-82b0-b56f77d6f1fa"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d835e9b6-527a-46c5-a104-109b0e0603c5"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="dfaf213b-595c-4032-a218-9be2735c3b5f"
+            name="GenerateEncounter"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="cc940e24-0724-4593-bb99-b93e7228386d"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="72662e46-d4c1-4efd-9d83-98b99fb259a9"
+                      LastKnownName="Encounter"
+                      LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="edf563bb-f894-4d20-8153-2c98cdb89aa0"
+            name="GetCR"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="445ec01e-03ce-42c8-9f6e-4a5f7e36d4ef"
+                  name="name"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="8b8efc3e-3db2-4004-aa64-1b6173443a41"
+                      LastKnownName="string"
+                      LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4d791ab9-3f02-4c48-bf47-fc0ab3cb7b4c"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="efe4d519-ade6-4776-8a08-2c0a84439579"
+                      LastKnownName="int"
+                      LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4b38c763-a2ad-4552-9011-f46baed34619"
+        name="MonsterFactory"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="6f08af67-89c7-4081-8b5d-42bdb63b0576"
+            name="CreateMonster"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6276c7be-a032-4bb5-8199-1f5c7773b786"
+                  name="name"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="8b8efc3e-3db2-4004-aa64-1b6173443a41"
+                      LastKnownName="string"
+                      LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d9c6a85a-eb88-458e-8a70-421a15f90a0e"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="267ebd5b-db03-48b2-bb28-4b1069d6bab5"
+                      LastKnownName="Monster"
+                      LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7bef652a-c59e-4f89-a9dd-5e1b7299e041"
+        name="Bugbear"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="e0ce78fc-c290-44f9-8192-1760deb9d261">
+            <interfaceMoniker
+              Id="267ebd5b-db03-48b2-bb28-4b1069d6bab5"
+              LastKnownName="Monster"
+              LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="8ee83951-c40b-4834-bb60-eb98bb6fc483"
+            name="Update"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="bc14ddde-edde-4e7f-9eb5-3e3abb8bdd71"
+            name="Attack"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5bbf2921-9d67-4e39-b1f7-8a595860da61"
+                  name="target"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="5b68e616-91a4-4f58-9b0b-0f1661a8d25a"
+                      LastKnownName="FinalProjectUML::Entity"
+                      LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="df472497-efb4-49d8-9943-70c32a43b083"
+            name="IsDead"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="079c2d65-4cb4-4fcc-bfcd-115ada0b08e7"
+            name="ArmorClass"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d66f55e9-d98b-4270-b398-abcc28fedaa7"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="559e1cfe-7a33-410a-88fb-8af8bb0d7d81"
+            name="TouchArmorClass"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7fa0c8b8-879d-4a6a-9e17-5f27b93f1f91"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="a0d46b1a-f571-4f28-b5d8-9ea88b0ed5fa"
+            name="Has2H"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5cf5a5a0-2f03-44d1-88e1-211de448ff30"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="42e5e956-d524-4277-829e-358ae124b4c8"
+            name="Clone : Monster"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b21e7fc8-9735-41c1-afee-9a1eca93f78e"
+        name="Choker"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="9872f658-22b0-4257-aac1-138d2a029e56"
+        name="Cockatrice"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="118a5747-d51b-4162-a8ed-15a845b48d30"
+        name="Darkmantle"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="94723e8c-84d0-48ac-b124-f412d5a11ea2"
+        name="DireRat"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="253ff94d-53fb-4934-be69-619e175f4906"
+        name="FireBeetle"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5f816683-54fd-4f63-a6d2-f28bd8899ddd"
+        name="GelatinousCube"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="daac7005-5804-4d59-bbe8-75262d088cc4"
+        name="ETC"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
