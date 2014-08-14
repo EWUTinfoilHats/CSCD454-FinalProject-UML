@@ -2398,6 +2398,30 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="db6231a1-98ab-47f5-8c5f-d936210946f0" name="CombatGroup" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="ff160737-6970-437b-8913-cb7014e9fa7b" />
+        <suppliersInternal>
+          <interfaceRealization Id="86bd31e8-99d5-4dcd-986a-3bfa5435234a">
+            <interfaceMoniker Id="f0f7c0b2-eb1c-4170-a651-45caf14b1d7d" LastKnownName="IEnumerable" />
+            <elementDefinition Id="1b948c2c-9745-41e5-bd4c-70c1295a80ec" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <targetEnds>
+          <association Id="94be1c20-5b23-4673-80a5-702ce1d0c8ea" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="02e6333b-08ec-4a8f-810d-e7e7d7173c51" LastKnownName="CombatGroupEnum" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b6e2f990-b9b3-4a12-a6f4-b13a82e22aa0" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="29900d83-b69d-49b5-8aa9-2ad43fd8165f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3066eece-6cc9-4dfa-a953-5c121bbf50f0" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="037af909-8079-4ab1-8381-f023cce95ca1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1c253476-79c3-4445-a2ec-b7d7845ee5de" />
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property Id="bac37f24-3a63-49c2-99b6-9cf0f0ed3996" name="Players" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="98e70836-4b44-4239-88de-91f6afdfeae8" />
@@ -2829,6 +2853,107 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="89573632-102d-4f1e-8155-64a5f327b107" name="ETC" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="daac7005-5804-4d59-bbe8-75262d088cc4" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="02e6333b-08ec-4a8f-810d-e7e7d7173c51" name="CombatGroupEnum" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="85fc18a0-e88c-402d-9a04-f7c1d6891301" />
+        <suppliersInternal>
+          <interfaceRealization Id="fb7fbf95-c78e-4de4-8d2c-580dc82a94b0">
+            <interfaceMoniker Id="fc42a996-8e1e-4e2e-9dbb-5e71ff1bdd26" LastKnownName="IEnumerator" />
+            <elementDefinition Id="bd853a50-55d8-4d25-92bc-6fca293956cd" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <targetEnds>
+          <association Id="caaac985-9705-4ae7-ae37-af216faca643" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="db6231a1-98ab-47f5-8c5f-d936210946f0" LastKnownName="CombatGroup" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a50a4950-2304-49cf-b8b6-94cd0ccb43e0" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="67aed44d-08ae-409b-be8c-cf0e3e7c46c0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6e2d1e50-6b89-40cf-bf4a-4247bccb6772" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ac8fa774-bc8e-4e46-85e5-413d76047fa9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="03c32396-7066-4e5e-a76e-8df7e10bd8e4" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="fc42a996-8e1e-4e2e-9dbb-5e71ff1bdd26" name="IEnumerator" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b9fea51a-5fc9-443b-ad5f-04212e5bd21c" />
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="f0f7c0b2-eb1c-4170-a651-45caf14b1d7d" name="IEnumerable" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5f85e594-a8a3-4531-98a6-6bdcdcf7a11d" />
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="9728a6d4-41a9-47e1-b9f1-57e16f4fbcac" name="AbstractLootFactory" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="21fae5a5-deac-4d44-bc78-d3e4f232bc8a" />
+        <ownedOperations>
+          <operation Id="bc579558-314c-4776-97a7-cf1477a30d6b" name="GenerateLoot" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4a636e4f-0e0d-4f8f-8764-51a121b83d34" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="1e7f4e7c-72cb-4a75-8d8e-fd8e43ce028f" name="CR" direction="In" isUnique="false">
+                  <elementDefinition Id="72681ed5-01e2-4d9b-ae75-41d42819209e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="1e26e574-a2f7-403a-b742-64a9934b4ac6" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="852d1bf7-878a-479b-8b3f-c747ee8e6fb1" direction="Return" isUnique="false">
+                  <elementDefinition Id="97c2be72-efb4-4861-a59a-f55e9afa7ebc" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="026b2a06-88f0-4e37-b3e5-d671bbed5d8c" LastKnownName="IList&lt;Item&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="036e5e21-19fb-4cbf-8b3a-dfe09c235472" name="DefaultLootFactory" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ea2d67d4-e160-4b87-ad85-058b4a6023cb" />
+        <suppliersInternal>
+          <interfaceRealization Id="a55a056d-9e9e-411b-b9da-b421b3d2876a">
+            <interfaceMoniker Id="9728a6d4-41a9-47e1-b9f1-57e16f4fbcac" LastKnownName="AbstractLootFactory" />
+            <elementDefinition Id="c104b547-0332-43b4-af4b-b6275830d551" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="a80a39a9-f95e-4ae3-9a2c-adc6464380c4" name="GenerateLoot" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="cc0889b5-08cd-4795-ace1-06dac5f4a791" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4b16076c-7321-428c-b61f-9ff0a6651d28" name="CR" direction="In" isUnique="false">
+                  <elementDefinition Id="1a4c3958-7e5d-4d74-9e47-7e0b494b51d2" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="1e26e574-a2f7-403a-b742-64a9934b4ac6" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="fe14bf61-6093-4b68-983d-ac416dcc32cd" direction="Return" isUnique="false">
+                  <elementDefinition Id="b538727a-febb-4b29-92fa-683eae6f50b1" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="026b2a06-88f0-4e37-b3e5-d671bbed5d8c" LastKnownName="IList&lt;Item&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
   </packagedElements>

@@ -4675,6 +4675,54 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="1b948c2c-9745-41e5-bd4c-70c1295a80ec">
+            <interfaceMoniker
+              Id="5f85e594-a8a3-4531-98a6-6bdcdcf7a11d"
+              LastKnownName="IEnumerable"
+              LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="1c253476-79c3-4445-a2ec-b7d7845ee5de"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="85fc18a0-e88c-402d-9a04-f7c1d6891301"
+              LastKnownName="CombatGroupEnum"
+              LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="29900d83-b69d-49b5-8aa9-2ad43fd8165f"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="037af909-8079-4ab1-8381-f023cce95ca1"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="98e70836-4b44-4239-88de-91f6afdfeae8"
@@ -5433,6 +5481,183 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="85fc18a0-e88c-402d-9a04-f7c1d6891301"
+        name="CombatGroupEnum"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="bd853a50-55d8-4d25-92bc-6fca293956cd">
+            <interfaceMoniker
+              Id="b9fea51a-5fc9-443b-ad5f-04212e5bd21c"
+              LastKnownName="IEnumerator"
+              LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="03c32396-7066-4e5e-a76e-8df7e10bd8e4"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="ff160737-6970-437b-8913-cb7014e9fa7b"
+              LastKnownName="CombatGroup"
+              LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="67aed44d-08ae-409b-be8c-cf0e3e7c46c0"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ac8fa774-bc8e-4e46-85e5-413d76047fa9"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="b9fea51a-5fc9-443b-ad5f-04212e5bd21c"
+        name="IEnumerator"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="5f85e594-a8a3-4531-98a6-6bdcdcf7a11d"
+        name="IEnumerable"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="21fae5a5-deac-4d44-bc78-d3e4f232bc8a"
+        name="AbstractLootFactory"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="4a636e4f-0e0d-4f8f-8764-51a121b83d34"
+            name="GenerateLoot"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="72681ed5-01e2-4d9b-ae75-41d42819209e"
+                  name="CR"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="efe4d519-ade6-4776-8a08-2c0a84439579"
+                      LastKnownName="int"
+                      LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="97c2be72-efb4-4861-a59a-f55e9afa7ebc"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="9c4f7b66-6a17-4404-9492-1a62476e6410"
+                      LastKnownName="IList&lt;Item&gt;"
+                      LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ea2d67d4-e160-4b87-ad85-058b4a6023cb"
+        name="DefaultLootFactory"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="c104b547-0332-43b4-af4b-b6275830d551">
+            <interfaceMoniker
+              Id="21fae5a5-deac-4d44-bc78-d3e4f232bc8a"
+              LastKnownName="AbstractLootFactory"
+              LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="cc0889b5-08cd-4795-ace1-06dac5f4a791"
+            name="GenerateLoot"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1a4c3958-7e5d-4d74-9e47-7e0b494b51d2"
+                  name="CR"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="efe4d519-ade6-4776-8a08-2c0a84439579"
+                      LastKnownName="int"
+                      LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b538727a-febb-4b29-92fa-683eae6f50b1"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="9c4f7b66-6a17-4404-9492-1a62476e6410"
+                      LastKnownName="IList&lt;Item&gt;"
+                      LastKnownLocation="CSCD454-FinalProject-UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
