@@ -3377,6 +3377,89 @@
         <elementDefinition Id="3fcc8a49-66e7-4532-b854-96f2ef982111" />
       </referencedType>
     </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="69e17d43-da3b-4d0f-bc4e-4ae74081e2f3" name="Main" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="85a48bc9-9423-4cbd-9159-d80584566847" />
+        <targetEnds>
+          <association Id="8f4ba6bd-7865-46b2-bfac-03f1106070c9" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="44188c46-e4ea-413b-8d6d-d135f0a919cc" LastKnownName="Game" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6f84d669-2529-4c23-b92e-076ac84d86b3" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="8770a9e4-ead1-4cd9-af45-6196611410f7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="34f4d3b7-8259-4f97-bdde-cc0197f625d4" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="083ca1fd-0c97-4816-88e5-bcff4d9bd442" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e41ce322-f500-4811-8cbb-59669d6eeb8d" />
+          </association>
+          <association Id="1674ffa9-e85d-47d5-a476-68422d7a3629" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <interfaceMoniker Id="b7f53860-f7f4-474e-9c39-d24bfa512996" LastKnownName="UserInteraction" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2cc4fe27-bfb5-423f-b79a-9f37fc76c25b" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="4d2588e5-8009-47d2-8853-2b076e54e05c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="43cf2dfa-4a82-4825-8c29-5d04a11fef7d" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f629b58a-2738-465c-bb23-cf1fc8f653f9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="690a757d-ba8d-4282-987d-0f09d26aa7b0" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="44188c46-e4ea-413b-8d6d-d135f0a919cc" name="Game" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="92582f7a-3270-46ad-b0f5-26a7f066c8d4" />
+        <targetEnds>
+          <association Id="687cbbcc-2323-4e28-a321-ee1770221a84" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="a1fb4153-cbfa-4cd8-91ec-be57caf47d5e" LastKnownName="DungeonMaze" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e8084843-d218-40f5-bf1e-4598a7359794" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="174fd03e-ffa9-411f-895d-1459a74bdcca" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f0e8974f-de66-4f18-87cc-9e51a97e1040" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="d7c727b4-6674-42fa-b09f-42d83fe438a1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="98be56d9-9b13-4e44-a6fd-7f0b84552483" />
+          </association>
+          <association Id="fff57657-d1bb-4577-85ff-3ba73e8005a0" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <interfaceMoniker Id="b7f53860-f7f4-474e-9c39-d24bfa512996" LastKnownName="UserInteraction" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a3139c74-d4fb-4a9d-a75a-76e5e5aa6977" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="08c64878-b402-4e57-925e-19d5a1c7e23d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="715f2450-7173-4599-9cf9-36d16d577733" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="60516f87-34e8-46d3-823d-ca5d6d83f90b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b05df53e-fde7-4941-8170-bd56b6260d7e" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="ba377b05-4c3d-4f75-b640-396fbf83a9fb" name="Play" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="13e20410-a9d3-4817-ab88-67d8684cf9fe" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="e3d47433-de3c-48fd-a1e8-f4e209e034be" name="CSCD454-FinalProject-UML">
     <elementDefinition Id="6893991c-68d7-41de-9427-8a1830b61cbf" />
